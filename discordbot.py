@@ -14,6 +14,6 @@ async def on_message(message):
         await client.change_presence(activity=discord.Game(name="今売れ"))
         
     if message.content == "/stop":
-        await client.change_presence(activity=discord.Game(name=""))
+        await client.change_presence(activity=discord.Game(name="何もするな"))
         
 client.run(token)
