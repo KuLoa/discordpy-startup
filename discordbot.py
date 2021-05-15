@@ -7,13 +7,13 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("r/kae"):
+    if message.content.startswith("/kae"):
         m1 = message.content.replace("/kae ", "")
         m2 = m1.split()
         buy = m2[0]
         sell = m2[1]
         embed = discord.Embed(title="DTC売買", description="", color=000000)
-        embed.add_field(name="今は 「買い」　です", value="購入額 : " + buy + "\n売却額" + sell, inline=False)
+        embed.add_field(name="今は 「買い」　です", value="購入額 : " + buy + "\n売却額 : " + sell, inline=False)
         embed.set_footer(text="")
         await message.channel.send(embed=embed)
         await client.change_presence(activity=discord.Game(name="今は「買い」"))
@@ -24,7 +24,7 @@ async def on_message(message):
         buy = m2[0]
         sell = m2[1]
         embed = discord.Embed(title="DTC売買", description="", color=000000)
-        embed.add_field(name="今は 「売り」　です", value="購入額 : " + buy + "\n売却額" + sell, inline=False)
+        embed.add_field(name="今は 「売り」　です", value="購入額 : " + buy + "\n売却額 : " + sell, inline=False)
         embed.set_footer(text="")
         await message.channel.send(embed=embed)
         await client.change_presence(activity=discord.Game(name="今は「売り」"))
