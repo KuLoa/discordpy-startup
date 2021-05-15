@@ -7,7 +7,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("/kae"):
+    if message.content.startswith("r/kae"):
         m1 = message.content.replace("/kae ", "")
         m2 = m1.split()
         buy = m2[0]
@@ -18,7 +18,7 @@ async def on_message(message):
         await message.channel.send(embed=embed)
         await client.change_presence(activity=discord.Game(name="今は「買い」"))
 
-    if message.content.startswith("/ure"):
+    if message.content.startswith("r/ure"):
         m1 = message.content.replace("/ure ", "")
         m2 = m1.split()
         buy = m2[0]
