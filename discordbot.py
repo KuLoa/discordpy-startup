@@ -13,4 +13,7 @@ async def on_message(message):
     if message.content == "/ure":
         await client.change_presence(activity=discord.Game(name="今売れ"))
         
+    if message.content == "/stop":
+        await client.change_presence(activity=discord.Game(name=""))
+        
 client.run(token)
