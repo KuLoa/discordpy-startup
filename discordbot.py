@@ -15,6 +15,7 @@ async def on_message(message):
         embed = discord.Embed(title="DTC売買", description="", color=000000)
         embed.add_field(name="今は 「買い」　です", value="購入額 : " + buy + "\n売却額" + sell, inline=False)
         embed.set_footer(text="")
+        await message.channel.send(embed=embed)
         await client.change_presence(activity=discord.Game(name="今は「買い」"))
 
     if message.content.startswith("/ure"):
@@ -25,6 +26,7 @@ async def on_message(message):
         embed = discord.Embed(title="DTC売買", description="", color=000000)
         embed.add_field(name="今は 「売り」　です", value="購入額 : " + buy + "\n売却額" + sell, inline=False)
         embed.set_footer(text="")
+        await message.channel.send(embed=embed)
         await client.change_presence(activity=discord.Game(name="今は「売り」"))
         
     if message.content == "/stop":
